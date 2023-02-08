@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to right, #2d85b7, #aa2d87);
+    font-weight: bold;
+}
+
+.dark {
+    transition: 4s;
+    --background: #000110;
+}
+
+.light {
+    transition: 4s;
+    --background: #ddd;
+}
+
+.mainBox {
+    width: 300px;
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding: 20px;
+    background-color: var(--background);
+    border-radius: 20px;
+}
+
+.clockBox {
+    position: relative;
+    height: 220px;
+    width: 220px;
+    margin: 10px auto;
+    background-color: #115fe3;
+    border-radius: 50%;
+}
+
+.clockBox::before {
+    content: '';
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    top: 50%;
+    left: 50%;
+    transition: 2s;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: var(--background);
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.301);
+}
+
+.clockBox::after {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #115fe3;
+}
+
+.min, .hr, .sec {
+    position: absolute;
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+}
+
+.min {
+    height: 100px;
+    width: 4px;
+    background-color: #115fe3;
+    margin: auto;
+    top: 5%;
+    left: 49%;
+    border-radius: 2%;
+}
+
+.hr {
+    height: 70px;
+    width: 5px;
+    background-color: #115fe3;
+    margin: auto;
+    top: 18%;
+    left: 49%;
+    border-radius: 2%;
+}
+
+.sec {
+    height: 110px;
+    width: 2px;
+    background-color: #115fe3;
+    top: 0%;
+    left: 49.5%;
+    border-radius: 2%;
+}
+
+.med {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    color: #115fe3;
+}
+
+.info {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.digitalHours {
+    font-size: 25px;
+    color: #115fe3;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.basic {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #115fe3;
+}
+
+.basic .city {
+    font-size: 30px;
+}
+
+.basic .date {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.mode {
+    color: #115fe3;
+    font-size: 20px;
+    margin-top: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
